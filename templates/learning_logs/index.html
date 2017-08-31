@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../static/index.css">
+</head>
+<body>
+	{% extends 'learning_logs/base.html' %}
+
+    {% load staticfiles %}
+
+
+	{% block content %}
+	<p id="a">
+		Learning Log helps you keep track of your learning, for any topic you're learning about.
+	</p>
+
+	<p>the time is {{ now }}</p>
+
+	<ul>
+		{% for user in userlists %}
+		<li> {{ user.name }} </li>
+
+		{% empty %}
+		<p>not user is loaded at this time</p>
+		{% endfor %}
+	</ul>
+        {% load staticfiles %}
+        <img src="{% static 'timg.jpeg' %}">
+        <script src="{% static 'abc.js' %}" charset="utf-8"></script>
+	{% endblock content%}
+
+
+</body>
+</html>
